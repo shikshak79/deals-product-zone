@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product.Zone — How We Work</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=switzer@300,400,500,600,700&f[]=gambetta@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #FFFFFF; --light: #F0EFEA; --light2: #E8E7E1; --lborder: #D4D2CB;
+  --ltext: #1a1a1a; --lmuted: #4a4a4a; --lmuted2: #7a7a7a;
+  --teal: #2BB5C7; --teal-faint: rgba(43,181,199,0.07);
+  --orange: #D4910A; --orange-faint: rgba(212,145,10,0.07);
+  --green: #1E8C4E; --green-faint: rgba(30,140,78,0.06);
+  --red: #A3292B; --red-faint: rgba(163,41,43,0.06);
+  --black: #0a0a0a; --surface: #141414; --surface2: #1c1c1c;
+  --dtext: #EDECE6; --dmuted: rgba(255,255,255,0.6); --dmuted2: rgba(255,255,255,0.3); --dborder: rgba(255,255,255,0.08);
+  --display: 'Clash Display', sans-serif; --body: 'Switzer', sans-serif;
+  --mono: 'JetBrains Mono', monospace; --editorial: 'Gambetta', serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--body); background: var(--light); color: var(--ltext); line-height: 1.65; font-size: 14px; }
+.page { max-width: 960px; margin: 0 auto; padding: 56px 48px 72px; }
+
+/* Header */
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
+.logo { font-family: var(--display); font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
+.logo-dot { color: var(--teal); }
+.top-cta { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: var(--teal); text-decoration: none; }
+
+.hero { display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: end; margin-bottom: 56px; }
+.hero h1 { font-family: var(--editorial); font-size: 44px; font-weight: 500; line-height: 1.08; margin-bottom: 16px; }
+.hero-sub { font-size: 16px; color: var(--lmuted); line-height: 1.6; max-width: 520px; }
+.hero-stat { text-align: right; }
+.stat-num { font-family: var(--display); font-size: 56px; font-weight: 600; color: var(--lborder); line-height: 1; }
+.stat-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lmuted2); margin-top: 4px; }
+
+/* Section labels */
+.sec-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lmuted2); display: flex; align-items: center; gap: 12px; margin-bottom: 24px; margin-top: 56px; }
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--lborder); }
+
+/* Offer cards */
+.offer-grid { display: grid; grid-template-columns: 58fr 42fr; gap: 20px; }
+
+.offer-card { border-radius: 8px; padding: 28px 28px 32px; position: relative; }
+.offer-card.entry {
+  background: var(--surface);
+  border: 1px solid var(--dborder);
+  border-left: 4px solid var(--teal);
+  color: var(--dtext);
+}
+.offer-card.progression {
+  background: var(--white);
+  border: 1px solid var(--lborder);
+}
+
+/* Badge */
+.card-badge {
+  position: absolute;
+  top: -1px; right: 24px;
+  background: var(--teal);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 8px; font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 9px 5px;
+  border-radius: 0 0 3px 3px;
+}
+
+.offer-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.offer-card.entry .offer-eyebrow { color: var(--teal); }
+.offer-card.progression .offer-eyebrow { color: var(--orange); }
+
+.offer-name { font-family: var(--display); font-size: 24px; font-weight: 600; margin-bottom: 6px; }
+.offer-promise { font-size: 14px; line-height: 1.55; margin-bottom: 20px; }
+.offer-card.entry .offer-promise { color: var(--dmuted); }
+.offer-card.progression .offer-promise { color: var(--lmuted); }
+
+.offer-price { font-family: var(--display); font-size: 32px; font-weight: 600; color: var(--orange); margin-bottom: 2px; }
+.offer-timing { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--lmuted2); margin-bottom: 20px; }
+
+.offer-divider { border: none; margin: 16px 0; }
+.offer-card.entry .offer-divider { border-top: 1px solid var(--dborder); }
+.offer-card.progression .offer-divider { border-top: 1px solid var(--lborder); }
+
+/* Deliverable items */
+.del-item { padding: 8px 0; }
+.del-name { font-size: 14px; font-weight: 500; line-height: 1.4; }
+.del-desc { font-size: 12px; line-height: 1.5; margin-top: 2px; }
+.offer-card.entry .del-desc { color: var(--dmuted); }
+.offer-card.progression .del-desc { color: var(--lmuted); }
+
+/* Guarantee */
+.guarantee {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 12px; border-radius: 3px;
+  background: var(--teal-faint);
+  border: 1px solid rgba(43,181,199,0.18);
+  color: var(--teal);
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Upgrade note */
+.upgrade-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  padding: 8px 12px;
+  border-radius: 3px;
+  background: var(--orange-faint);
+  color: var(--orange);
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* After section */
+.after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.after-card { background: var(--white); border: 1px solid var(--lborder); border-radius: 8px; padding: 24px; }
+.after-name { font-family: var(--display); font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.after-price { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--orange); margin-bottom: 2px; }
+.after-timing { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--lmuted2); margin-bottom: 12px; }
+.after-desc { font-size: 13px; color: var(--lmuted); line-height: 1.55; }
+
+/* How it works */
+.steps { margin-top: 16px; }
+.step-row { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--lborder); align-items: start; }
+.step-row:last-child { border-bottom: none; }
+.step-num { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--teal); padding-top: 2px; }
+.step-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+.step-desc { font-size: 13px; color: var(--lmuted); line-height: 1.5; }
+
+/* CTA bar */
+.cta-bar {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+.cta-text { font-size: 15px; font-weight: 500; color: var(--dtext); }
+.cta-sub { font-size: 12px; color: var(--dmuted); margin-top: 4px; }
+.cta-btn {
+  background: var(--teal);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 12px 20px; border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Footer */
+.footer { margin-top: 48px; display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lmuted2); }
+
+/* Share bar — utility actions, quiet */
+.share-bar { display: flex; gap: 8px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 4px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.04em;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid var(--lborder); background: var(--white); color: var(--lmuted2);
+  transition: background 0.15s, color 0.15s;
+}
+.share-btn:hover { background: var(--light2); color: var(--lmuted); }
+.share-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* Prose */
+.prose { font-size: 15px; color: var(--lmuted); line-height: 1.7; max-width: 640px; }
+.prose + .prose { margin-top: 12px; }
+
+/* Session note */
+.session-note {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--light2);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--lmuted);
+  line-height: 1.55;
+}
+.offer-card.entry .session-note {
+  background: var(--surface2);
+  color: var(--dmuted);
+}
+/* Print */
+@media print {
+  body { background: white; }
+  .page { padding: 32px 40px; }
+  .share-bar, .top-cta { display: none !important; }
+  .cta-bar { background: var(--light2) !important; color: var(--ltext) !important; }
+  .cta-text { color: var(--ltext) !important; }
+  .cta-sub { color: var(--lmuted) !important; }
+  .cta-btn { background: var(--ltext) !important; color: white !important; }
+  .offer-card.entry { background: var(--surface) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; color: var(--dtext) !important; }
+  .offer-card.entry .del-desc, .offer-card.entry .offer-promise { color: var(--dmuted) !important; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page { padding: 32px 24px 48px; }
+  .top-bar { flex-wrap: wrap; gap: 12px; }
+  .top-bar > div { flex-wrap: wrap; gap: 8px; }
+  .share-bar { order: 3; width: 100%; }
+  .hero { grid-template-columns: 1fr; gap: 20px; }
+  .hero h1 { font-size: 32px; }
+  .hero-stat { text-align: left; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .after-grid { grid-template-columns: 1fr; }
+  .fit-check { grid-template-columns: 1fr !important; }
+  .next-steps { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .next-steps > div[style*="text-align: center"] { display: none; }
+}
+@media (max-width: 600px) {
+  .share-bar { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="logo">Product<span class="logo-dot">.</span>Zone</div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div class="share-bar">
+        <a class="share-btn" href="#" onclick="navigator.clipboard.writeText(window.location.href);this.querySelector('span').textContent='Copied!';setTimeout(()=>this.querySelector('span').textContent='Copy link',1500);return false;" data-track="share-copy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          <span>Copy link</span>
+        </a>
+        <a class="share-btn" href="https://wa.me/?text=Had%20a%20look%20at%20how%20Product.Zone%20works.%20Thought%20this%20might%20be%20relevant%20for%20us.%20{{page_url}}?utm_source=offer&utm_medium=whatsapp&utm_campaign=share" target="_blank" rel="noopener" data-track="share-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a class="share-btn" href="#" onclick="window.print();return false;" data-track="share-pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Save PDF</span>
+        </a>
+      </div>
+      <a href="https://calendar.notion.so/meet/thorstenlampe/30?utm_source=offer&utm_medium=topnav&utm_campaign=dm" class="top-cta" data-track="cta-topnav-book">Book diagnostic intro ➜</a>
+    </div>
+  </div>
+
+  <!-- DM opener -->
+  <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.02em; color: var(--lmuted2); margin-bottom: 28px; line-height: 1.6;">You asked how I work. This is the short version.</div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div>
+      <h1>Your deal system.<br>Designed and installed.</h1>
+      <p class="hero-sub">For B2B tech founders with a working product and a sales motion that still depends on them. The Deal Sprint locks the position. The Deal System builds and installs the rest. Fixed scope, fixed price, you own everything.</p>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num" style="font-size: 40px; line-height: 1.1;">Most<br>deals</div>
+      <div class="stat-label">die to indecision,<br>not competitors</div>
+    </div>
+  </div>
+
+  <!-- Choose -->
+  <div class="sec-label">Two stages. Pick where you start.</div>
+
+  <div class="offer-grid">
+
+    <!-- SPRINT (recommended, dark) -->
+    <div class="offer-card entry">
+      <div class="card-badge">Recommended start</div>
+      <div class="offer-eyebrow">You get clear</div>
+      <div class="offer-name">Deal Sprint</div>
+      <div class="offer-promise">You stop guessing. One committed position, one core story, one homepage direction. Testable in real conversations within two weeks.</div>
+      <div class="offer-price">€2,500</div>
+      <div class="offer-timing">2 weeks · 3 sessions · ~6h of your time</div>
+
+      <hr class="offer-divider">
+
+      <div class="del-item">
+        <div class="del-name">Positioning presentation</div>
+        <div class="del-desc">Your position on one set of cards. Category, customer, alternative, difference, outcome. One reference your whole team builds from.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Bet cards (when running multiple bets)</div>
+        <div class="del-desc">Every bet mapped and scored. Which to commit, which to test, which to fold. The decision that forces clarity before positioning work begins.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Deal map</div>
+        <div class="del-desc">Where deals break and why. Stage by stage, with the decisions that were missing underneath.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Core story (draft)</div>
+        <div class="del-desc">The first written version of what to say. Built from the locked position. Testable in real conversations this week.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Homepage preview</div>
+        <div class="del-desc">Hero, contrast, differentiation. Your position working on the most important surface, before anything gets built.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Action plan</div>
+        <div class="del-desc">Every open decision mapped. Three stall points named. What to fix first. Works with or without me.</div>
+      </div>
+
+      <!-- What changes block -->
+      <div style="margin: 20px 0 16px; padding: 16px 18px; border-radius: 6px; background: rgba(43,181,199,0.08); border: 1px solid rgba(43,181,199,0.15);">
+        <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px;">What changes after 2 weeks</div>
+        <div style="font-size: 13px; color: var(--dmuted); line-height: 1.7;">
+          One bet is chosen. One position is locked.<br>
+          One core story replaces improvisation.<br>
+          Homepage direction becomes visible.<br>
+          You know exactly what still needs building.<br>
+          You can sell from this.
+        </div>
+      </div>
+
+      <div class="guarantee">Money-back guarantee. If I can't surface at least 3 concrete problems with a clear fix path, you don't pay. Everything produced is yours regardless.</div>
+
+      <div class="session-note">I do all the analysis before we meet. You arrive to find options on the table and a recommendation with reasoning. Your job: choose, react, lock. No homework between sessions.</div>
+    </div>
+
+    <!-- SYSTEM (progression, light) -->
+    <div class="offer-card progression">
+      <div class="offer-eyebrow">Your company gets a machine</div>
+      <div class="offer-name">Deal System</div>
+      <div class="offer-promise">The Sprint gave you clarity. The System makes it executable. Your homepage, deck, and deal operation get built and installed. Your team runs deals without you.</div>
+      <div class="offer-price">€8,500</div>
+      <div class="offer-timing">10-12 weeks · 3 more sessions + implementation · ~8-10h of your time</div>
+
+      <hr class="offer-divider">
+
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; margin-top: 4px;">Surfaces</div>
+
+      <div class="del-item">
+        <div class="del-name">Full homepage copy</div>
+        <div class="del-desc">Production-ready. Every section answers a specific buyer question. Each section has a documented job: what it must do and why. Design brief included.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Pitch deck</div>
+        <div class="del-desc">12 slides. Works without you explaining it. A champion can forward this and the recipient gets the pitch.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Competitive map</div>
+        <div class="del-desc">How each competitor frames their position. Your locked differentiation mapped against the field.</div>
+      </div>
+
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; margin-top: 24px;">Deal operation</div>
+
+      <div class="del-item">
+        <div class="del-name">Deal Room</div>
+        <div class="del-desc">Your operating layer. Every document produced per prospect, from qualification through close. The system compounds with use.</div>
+      </div>
+
+      <div style="margin: 12px 0 16px; padding: 14px 16px; background: var(--light2); border-radius: 6px; border: 1px solid var(--lborder);">
+        <div style="font-family: var(--mono); font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 10px;">Inside the Deal Room</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px;">
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Gate scan / qualification verdict</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Call prep (per call)</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Call debrief + carry-forwards</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Follow-up draft (per call)</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Next-call prep</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Demo flow + script</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Objection map</div>
+          <div style="font-size: 12px; color: var(--lmuted); padding: 3px 0;">Champion kit + sales brief</div>
+        </div>
+      </div>
+
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; margin-top: 24px;">Proof + control</div>
+
+      <div class="del-item">
+        <div class="del-name">Live deal proof</div>
+        <div class="del-desc">2-3 real prospects run through the Deal Room before handover. You see the system working on live deals.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Channel plan</div>
+        <div class="del-desc">Primary channel confirmed. Secondary mapped. The brief for outbound or content partners.</div>
+      </div>
+      <div class="del-item">
+        <div class="del-name">Performance signals</div>
+        <div class="del-desc">5-7 numbers that tell you if the system is working. What to watch. What drift looks like.</div>
+      </div>
+
+      <!-- What changes block -->
+      <div style="margin: 20px 0 16px; padding: 16px 18px; border-radius: 6px; background: var(--orange-faint); border: 1px solid rgba(212,145,10,0.15);">
+        <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px;">What changes after 12 weeks</div>
+        <div style="font-size: 13px; color: var(--lmuted); line-height: 1.7;">
+          Homepage and deck are ready to use.<br>
+          Every prospect runs through a repeatable flow.<br>
+          Qualification, prep, demo, follow-up, and handoff stop depending on you.<br>
+          Real prospects proved the system works before handover.<br>
+          A first hire can onboard from the workspace alone.
+        </div>
+      </div>
+
+      <div class="session-note">Same operating model. I build between sessions. You review, rehearse, and approve. During implementation, real prospects run through the Deal Room with async support.</div>
+
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.04em; color: var(--lmuted2); margin-top: 12px; line-height: 1.5;">Contains the Sprint. If you completed the Sprint, we continue straight into the build. Sprint investment credited.</div>
+    </div>
+
+  </div>
+
+  <!-- Fit check -->
+  <div class="fit-check" style="margin-top: 32px; display: grid; grid-template-columns: 58fr 42fr; gap: 20px;">
+    <div style="background: var(--green-faint); border: 1px solid rgba(30,140,78,0.12); border-radius: 8px; padding: 24px 28px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 14px;">Best fit</div>
+      <div style="font-size: 13px; color: var(--lmuted); line-height: 1.85;">
+        ➜ Working product, sales conversations happening (even unsuccessful ones)<br>
+        ➜ The person who makes positioning decisions is available for sessions<br>
+        ➜ A specific commercial problem you can name: deals stalling, pitch changing every call, wrong prospects booking demos<br>
+        ➜ Something depends on fixing this: a hire, funding to deploy, a market window
+      </div>
+    </div>
+    <div style="background: var(--red-faint); border: 1px solid rgba(163,41,43,0.10); border-radius: 8px; padding: 24px 28px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 14px;">Not a fit right now</div>
+      <div style="font-size: 13px; color: var(--lmuted); line-height: 1.85;">
+        ➜ Pre-product or pre-revenue with no sales conversations yet<br>
+        ➜ Looking for someone to run your sales for you<br>
+        ➜ The decision maker can't be in the sessions
+      </div>
+    </div>
+  </div>
+
+  <!-- After -->
+  <div class="sec-label">After the system is running</div>
+
+  <div class="after-grid">
+    <div class="after-card">
+      <div class="after-name">Deal Coaching</div>
+      <div class="after-price">€2,500</div>
+      <div class="after-timing">Per 4-week cycle · ~8 weeks typical</div>
+      <div class="after-desc">I stay in the Deal Room coaching live deals. Biweekly deal reviews. Call observations. Pipeline diagnosis. Questions and objection responses sharpen from real intelligence. We stop when your team runs it independently.</div>
+    </div>
+    <div class="after-card">
+      <div class="after-name">Deal Care</div>
+      <div class="after-price">€2,500</div>
+      <div class="after-timing">Per quarter · ongoing</div>
+      <div class="after-desc">Markets shift. Competitors move. Team grows. Quarterly re-score of the full deal path. Two sessions. Surfaces adjusted. Decisions refreshed. Each quarter gets faster because the baseline exists.</div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="sec-label">How it works</div>
+
+  <div class="steps">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div>
+        <div class="step-title">X-RAY (free)</div>
+        <div class="step-desc">I scan your homepage against 22 buyer questions and show you where deals break before they begin. Takes one day. No commitment.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div>
+        <div class="step-title">Deal Sprint (2 weeks)</div>
+        <div class="step-desc">Before we meet, I audit every surface you have: homepage, deck, outbound, LinkedIn, recorded calls. I arrive with the analysis done. Three 90-minute sessions. You make decisions, I do the work between them. You leave with a committed position, a core story, and a homepage preview.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div>
+        <div class="step-title">Deal System (10-12 weeks)</div>
+        <div class="step-desc">Three more sessions. I build the full homepage, pitch deck, and deal operation. You rehearse, review, and approve. During implementation, 2-3 real prospects run through the Deal Room. You see it working on live deals before I hand over.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div>
+        <div class="step-title">Coaching + Care (optional, ongoing)</div>
+        <div class="step-desc">If you want sharpening on live deals, I stay in the Deal Room for 8 weeks. After that, quarterly check-ins keep the system current as your market moves. Both are optional. The system works without me in it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What you don't need to do -->
+  <div class="sec-label">What this asks of you</div>
+
+  <p class="prose">Six hours for the Sprint. Eight to ten for the System. 90-minute sessions where the analysis is already done and the options are already on the table. Between sessions: notice how the new framing lands in real conversations. That's it. No homework. No frameworks to learn. No deliverables to produce.</p>
+
+  <p class="prose">I work in your timezone. Sessions are video calls. Everything lives in a shared workspace you can navigate without me explaining it. When I leave, the system stays.</p>
+
+  <!-- Proof block -->
+  <div class="sec-label">One example</div>
+
+  <div style="background: var(--white); border: 1px solid var(--lborder); border-left: 4px solid var(--teal); border-radius: 8px; padding: 24px 28px;">
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 14px;">B2B industrial · geospatial software</div>
+    <div style="display: grid; grid-template-columns: 1fr 32px 1fr; gap: 16px; align-items: start;">
+      <div>
+        <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Before</div>
+        <div style="font-size: 13px; color: var(--lmuted); line-height: 1.65;">Founder-dependent sales. No repeatable pitch. Zero qualified pipeline. Every deal required the CEO in the room explaining from scratch.</div>
+      </div>
+      <div style="font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--lborder); text-align: center; padding-top: 16px;">➜</div>
+      <div>
+        <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 8px;">After</div>
+        <div style="font-size: 13px; color: var(--lmuted); line-height: 1.65;">18 qualified conversations in 6 weeks. 5 closed deals in 3 months. Sales motion transferred to the team. CEO out of the pitch.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full deliverables spec (collapsible) -->
+  <div class="sec-label">Full deliverables list</div>
+
+  <details style="background: var(--white); border: 1px solid var(--lborder); border-radius: 8px;">
+    <summary style="padding: 20px 28px; cursor: pointer; font-family: var(--body); font-size: 14px; font-weight: 500; color: var(--ltext); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+      22 named deliverables across Sprint and System. Expand for the full itemised list.
+      <span style="font-family: var(--mono); font-size: 10px; color: var(--teal); letter-spacing: 0.06em;">SHOW DETAILS ↓</span>
+    </summary>
+    <div style="padding: 0 28px 28px;">
+
+    <!-- Sprint deliverables -->
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--lborder);">Deal Sprint · €2,500 · 2 weeks</div>
+
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Positioning presentation</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Set of positioning cards. Category, customer, alternative, difference, outcome, wedge use case, market bet, and the job your buyer is trying to get done. Each card with context and evidence.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Bet cards</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">When running multiple bets: scored bet cards per strategic bet. How big is the upside, how confident are we, how fast can we test, what if we are wrong. Commit / test / shelf / fold verdict per bet.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Deal map</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Where deals break, which stage, which decisions were missing. Scored across all available surfaces. Fix-first sequence.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Core story (draft)</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Category statement, problem framing, alternative contrast, difference mechanism, outcome claim, proof direction, first step. Testable in real conversations.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Homepage preview</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Hero + contrast + differentiation. Each section has a documented job. The strategic skeleton before full copy gets built.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Action plan</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">All commercial decisions inventoried. 12+ locked, remainder mapped. Three stall points named. Fix-first sequence. Works with or without me.</td>
+      </tr>
+    </table>
+
+    <!-- System deliverables -->
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; margin-top: 32px; padding-bottom: 6px; border-bottom: 1px solid var(--lborder);">Deal System · €8,500 total · 10-12 weeks · Extends Sprint</div>
+
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 10px; margin-top: 16px;">Decisions completed</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Full position lock</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">25+ commercial decisions locked with evidence. Trust, movement, activation, economic, discovery, and approval decisions completed. Pricing, value metric, offering architecture, stakeholder map, qualification criteria all locked. Positioning presentation updated to final.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Core story (complete)</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Production-ready. All core messages, proof points, objection responses. Every surface gets built from this.</td>
+      </tr>
+    </table>
+
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 10px; margin-top: 24px;">Surfaces built</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Full homepage copy</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">All 22 buyer questions answered. Each section has a documented job: what it must do and why. Design brief for developer/designer handoff.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Pitch deck</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">12 slides + copy. Works without you presenting it. Speaker notes included. A champion forwards this and the recipient understands.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Competitive map</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">How each competitor frames category, customer, alternative, difference. Your locked differentiation mapped against the field.</td>
+      </tr>
+    </table>
+
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 10px; margin-top: 24px;">Deal operation installed</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Deal Room</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Per-prospect operating system. Every deal document from qualification through close. Team access configured.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Gate scan</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Qualification logic. Proceed, wait, or skip verdict per prospect with evidence-based factsheet.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Call prep</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Per-call document. Branching questions based on what the prospect reveals, deck slide selections, risk flags, specific opening questions.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Call debrief</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Per-call document. What landed, key quotes, buyer signals, carry-forwards to next call. Probability updated.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Follow-up draft</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Per-call document. Every paragraph answers a specific question the prospect is asking themselves after the call.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Demo flow + script</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">5-minute arc: preview, alternative, mechanism, result, proof, risk, next step. Timed. Speaker guide included.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Objection map</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">7-10 objections across buying stages. For each: what the buyer is really asking, what to say, which asset to send.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Champion kit + sales brief</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">One-pager a rep or agency can use without you in the room. One-liner, ICP definition, proof points, first step offer.</td>
+      </tr>
+    </table>
+
+    <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lmuted2); margin-bottom: 10px; margin-top: 24px;">Proof + control</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; width: 200px; vertical-align: top;">Live deal proof</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">2-3 real prospects run through the full Deal Room document set during implementation. System proven on live deals before handover.</td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--light2);">
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Channel plan</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">Primary channel confirmed from implementation evidence. Secondary mapped. Execution sequence. The brief for outbound or content partners.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 0; font-weight: 500; vertical-align: top;">Performance signals</td>
+        <td style="padding: 7px 0; color: var(--lmuted); vertical-align: top;">5-7 numbers mapped to deal stages. What to watch weekly. What drift looks like. When to recalibrate.</td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 24px; padding: 12px 16px; background: var(--light2); border-radius: 6px; font-size: 12px; color: var(--lmuted); line-height: 1.55;">
+      <strong>Total System deliverables:</strong> 6 Sprint deliverables carried forward + 2 decision completions + 3 surfaces + 8 deal operation components + 3 proof/control items = <strong>22 named deliverables</strong>. Everything lives in one workspace. A first hire can onboard from it without you walking them through it.
+    </div>
+  </div>
+  </details>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div>
+      <div class="cta-text">Ready to see where your deals break?</div>
+      <div class="cta-sub">30-minute diagnostic intro. I'll have scanned your homepage before we talk.</div>
+    </div>
+    <a href="https://calendar.notion.so/meet/thorstenlampe/30?utm_source=offer&utm_medium=maincta&utm_campaign=dm" class="cta-btn" data-track="cta-main-book">Book diagnostic intro ➜</a>
+  </div>
+
+  <!-- Secondary X-RAY CTA -->
+  <div style="text-align: center; margin-top: 16px;">
+    <a href="https://xray.product.zone?utm_source=offer&utm_medium=secondary&utm_campaign=dm" style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: var(--lmuted2); text-decoration: none;" data-track="cta-xray-secondary">Not ready to book? <span style="color: var(--teal); text-decoration: underline;">Run the free X-RAY first ➜</span></a>
+  </div>
+
+  <!-- What happens next -->
+  <div class="next-steps" style="margin-top: 24px; display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; gap: 0; align-items: start;">
+    <div style="background: var(--white); border: 1px solid var(--lborder); border-radius: 8px; padding: 18px 20px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px;">Step 1</div>
+      <div style="font-size: 13px; font-weight: 500; margin-bottom: 4px;">Send this page or book the intro</div>
+      <div style="font-size: 12px; color: var(--lmuted); line-height: 1.5;">You share this with your cofounder, or book the 30-min call directly.</div>
+    </div>
+    <div style="text-align: center; font-family: var(--display); font-size: 16px; color: var(--lborder); padding-top: 28px;">➜</div>
+    <div style="background: var(--white); border: 1px solid var(--lborder); border-radius: 8px; padding: 18px 20px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px;">Step 2</div>
+      <div style="font-size: 13px; font-weight: 500; margin-bottom: 4px;">30-min diagnostic call</div>
+      <div style="font-size: 12px; color: var(--lmuted); line-height: 1.5;">I'll have scanned your homepage. We talk about what's broken and whether the Sprint makes sense.</div>
+    </div>
+    <div style="text-align: center; font-family: var(--display); font-size: 16px; color: var(--lborder); padding-top: 28px;">➜</div>
+    <div style="background: var(--white); border: 1px solid var(--lborder); border-radius: 8px; padding: 18px 20px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px;">Step 3</div>
+      <div style="font-size: 13px; font-weight: 500; margin-bottom: 4px;">Decide Sprint or not</div>
+      <div style="font-size: 12px; color: var(--lmuted); line-height: 1.5;">No pressure. If the diagnostic surfaces real problems with clear fixes, the Sprint is the next step. If not, you walk away with the X-RAY.</div>
+    </div>
+  </div>
+
+  <!-- Trust line -->
+  <div style="margin-top: 36px; padding: 16px 0; border-top: 1px solid var(--lborder);">
+    <div style="font-size: 13px; color: var(--lmuted); line-height: 1.65; max-width: 640px;">Thorsten Lampe built and sold B2B software products across early-stage (Asellion) and enterprise scale (Bayer, Covestro). Product.Zone exists because he kept seeing the same problem: founders with strong products and a sales motion that breaks the moment they step back.</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-brand">Product.Zone · Thorsten Lampe</span>
+    <span class="footer-brand">Amsterdam · hello@product.zone</span>
+  </div>
+
+</div>
+
+<script>
+// Share: WhatsApp URL uses current page location
+document.querySelectorAll('a[data-track="share-whatsapp"]').forEach(function(a) {
+  var base = encodeURIComponent(window.location.href.split('?')[0]);
+  a.href = 'https://wa.me/?text=' + encodeURIComponent('Had a look at how Product.Zone works. Thought this might be relevant for us. ') + base + encodeURIComponent('?utm_source=offer&utm_medium=whatsapp&utm_campaign=share');
+});
+
+// Track all clicks on data-track elements
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('[data-track]');
+  if (btn) {
+    var ev = btn.getAttribute('data-track');
+    var ts = new Date().toISOString();
+    console.log('PZ_OFFER_TRACK:', ev, ts);
+    // Future: send to analytics endpoint
+  }
+});
+</script>
+</body>
+</html>
